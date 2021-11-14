@@ -1,0 +1,8 @@
+Issue = Staff, Mobile: if mobile has space between the numbers or + in front it will rise error
+solved mobile data trim clean then insert
+Issue = staff, Mobile: if data type is int 11 it may not take mobile number insteed it insert hash numbers
+solved = data type change to double.  or even character?
+issue = date did not save to database just 0000-00-00
+solved = "DATE has to quoted when insert into data base 'start_date'
+
+

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.registration-form {
+  background: #f7f7f7;
+  padding: 20px;
+  border: 1px solid orange;
+  margin: 50px 0px;
+}
+
+.err-msg {
+  color: red;
+}
+
+.registration-form form {
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+  background: #f3f3f3;
+}
