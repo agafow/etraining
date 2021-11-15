@@ -25,12 +25,15 @@
     <!-- Navbar header-->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <div class="container">
-            <a href="index.php" class="navbar-brand">Training Day!</a>
+            <a href="index.php" class="navbar-brand">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="training.php" class="nav-link">Training </a>
+                    </li>
                     <li class="nav-item">
                         <a href="addStaff.php" class="nav-link">Add a new Training </a>
                     </li>

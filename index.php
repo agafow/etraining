@@ -14,7 +14,7 @@ error_reporting(E_ALL);
 
                 <div class="col-md-1"></div>
                 <div class="col-md-9">
-                    <h1 class="text-center"> Data table CRUD</h1>
+                    <h1 class="text-center">Staff at the Ministery</h1>
                     <!-- Table -->
 
                     <div class="table-responsive">

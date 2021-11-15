@@ -12,9 +12,10 @@ error_reporting(E_ALL);
         <div class="container">
             <div class="row">
 
-                <div class="col-md-1"></div>
-                <div class="col-md-9">
+
+                <div class="col-md-12">
                     <h1 class="text-center"> Incoming Training </h1>
+                    <h2> <a href="addTraining.php">Add a new training </a></h2>
                     <!-- Table -->
 
                     <div class="table-responsive">
@@ -22,12 +23,13 @@ error_reporting(E_ALL);
                             <thead>
                                 <tr>
 
-                                    <th>Proje t ID</th>
+
                                     <th>Training Name</th>
                                     <th>Start date</th>
                                     <th>End date</th>
                                     <th>Students</th>
-                                    <th>Project</th>
+                                    <th>Department</th>
+                                    <th>Enroll </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,7 +37,7 @@ error_reporting(E_ALL);
                                 $res =  getTraining();
                                 while ($row = mysqli_fetch_assoc($res)) {
                                     $row2 = getHisDepartmentProject($row['project_id']);
-                                    echo "<tr><td>" . $row['project_id'] . "</td><td>" . $row['tname'] . "</td><td>" . $row['start_date'] . "</td><td>" . $row['end_date'] . "</td><td>" . $row['nstudents'] . "</td><td>" .$row2 ."</td></tr>";
+                                    echo "<tr><td>"  . $row['tname'] . "</td><td>" . $row['start_date'] . "</td><td>" . $row['end_date'] . "</td><td>" . $row['nstudents'] . "</td><td>" .$row2 ."</td><td><a href=''>Enroll</a></td></tr>";
                                 }
                                 ?>
                             </tbody>

@@ -88,9 +88,9 @@ if (isset($_POST['submit'])) {
         // here you can write Sql Query to insert user data into database table
     } else {
         // set input values is empty until input field is invalid
-        //$set_sName = $sname;
-        //$set_mobile = $mobile;
-        //$set_email = $email;
+        $set_sName = $tname;
+        $set_nstudents = $nstudents;
+        $set_start_date = $start_date;
     }
 }
 // convert illegal input value to ligal value formate

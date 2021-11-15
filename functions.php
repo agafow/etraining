@@ -32,12 +32,14 @@ function getHisDepartment($id){
 
 function getHisDepartmentProject($pid){
     global $con;
-    $query = "SELECT d.dname  FROM project as p, department as d WHERE p.dep_id = d.did AND d.did = $pid  LIMIT 1";
-    $result = mysqli_query($con,$query);
-    echo $query;
+    $query = " SELECT d.dname, p.name  ";
+    $query .= " FROM training as t, projects as p, departments as d ";
+    $query .= " WHERE t.project_id = p.pid AND p.dep_id = d.did AND t.project_id = {$pid} LIMIT 1 ";
+    $result = mysqli_query($con, $query);
+   // echo $query;
     if($result){
         $res = mysqli_fetch_assoc($result);
-        return $res['d.dname'];
+        return $res['dname'];
     }else {
         echo "There is erros is";
     }
