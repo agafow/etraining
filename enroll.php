@@ -1,7 +1,6 @@
 <?php
 include('header.php');
 include('functions.php');
-include('validate.php');
 
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
@@ -9,35 +8,33 @@ error_reporting(E_ALL);
 ?>
 <div class="container-fluid mt-5">
     <div class="row">
-        <div class="container">
+        <div class="container p-3">
             <div class="row">
-
-
                 <div class="col-md-12">
-                    <h1 class="text-center"> Incoming Training </h1>
-                    <h2> <a href="addTraining.php">Add a new training </a></h2>
+                    <h1 class="text-center">Staff at the Ministery</h1>
                     <!-- Table -->
-
                     <div class="table-responsive">
                         <table class="table table-borderless display nowrap" id="example" style="width:100%">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Mobile</th>
+                                    <th>Email</th>
 
-                                    <th>Trainer </th>
-                                    <th>Training Name</th>
-                                    <th>Start date</th>
-                                    <th>End date</th>
-                                    <th>Students</th>
                                     <th>Department</th>
-                                    <th>Enroll </th>
+                                    <th>Enroll</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $res =  getTraining();
+                                if (isset($_GET['tid'])) {
+                                    $tid = $_GET['tid'];
+                                }
+                                $res = getStaff();
                                 while ($row = mysqli_fetch_assoc($res)) {
-                                    $row2 = getHisDepartmentProject($row['project_id']);
-                                    echo "<tr><td>"  . $row['trainer'] . "</td><td>"  . $row['tname'] . "</td><td>" . $row['start_date'] . "</td><td>" . $row['end_date'] . "</td><td>" . $row['nstudents'] . "</td><td>" . $row2 . "</td><td><a href='enroll.php?id={$row['tid']}'>Enroll</a></td></tr>";
+                                    $row2 = getHisDepartment($row['depid']);
+                                    echo "<tr><td>" . $row['sid'] . "</td><td>" . $row['sname'] . "</td><td>" . $row['mobile'] . "</td><td>" . $row['email'] . "</td><td>" . $row2 . "</td><td>     <form method='post' action=''><input class='form-check-input' type='checkbox' value='' id=''> <button class='btn btn-primary btn-sm' name='submit'>Enroll</button> </form></td><td></td></tr>";
                                 }
                                 ?>
                             </tbody>
@@ -49,5 +46,4 @@ error_reporting(E_ALL);
         </div>
     </div>
 </div>
-
 <?php include('footer.php'); ?>
