@@ -46,19 +46,21 @@ function getHisDepartmentProject($pid)
     }
 }
 
-function isErolled($tid, $sid)
+function isEnrolled($tid, $sid)
 {
     global $con;
     $query = " SELECT *   ";
     $query .= " FROM enrollment ";
     $query .= " WHERE tid = {$tid} AND sid = {$sid}  ";
     $result = mysqli_query($con, $query);
+    
     echo $query;
-    if ($result) {
-        return "yes";
+    //return $result;
+    if (empty($result)) {
+        return "Yes";
     } else {
-        echo "no";
-    }
+        echo "Noo";
+    }  
 }
 
 

@@ -4,5 +4,7 @@ Issue = staff, Mobile: if data type is int 11 it may not take mobile number inst
 solved = data type change to double.  or even character?
 issue = date did not save to database just 0000-00-00
 solved = "DATE has to quoted when insert into data base 'start_date'
+issue = A user can enroll twice which is not allowed 
+solved = Not yet
 
 
