@@ -53,14 +53,15 @@ function isEnrolled($tid, $sid)
     $query .= " FROM enrollment ";
     $query .= " WHERE tid = {$tid} AND sid = {$sid}  ";
     $result = mysqli_query($con, $query);
-    
-    echo $query;
+    return $result;
+    //echo $query;
     //return $result;
-    if (empty($result)) {
+    /** 
+    if ($result) {
         return "Yes";
     } else {
-        echo "Noo";
-    }  
+        return   "No";
+    } */
 }
 
 

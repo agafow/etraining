@@ -27,33 +27,31 @@ error_reporting(E_ALL);
                     </thead>
                     <tbody>
                         <?php
-                                if (isset($_GET['id'])) {
-                                    $tid = $_GET['id'];
-                                }else {
-                                    exit;
-                                    $tid="";
-                                }
-                                $res = getStaff();
-                                while ($row = mysqli_fetch_assoc($res)) {
-                                    $row2 = getHisDepartment($row['depid']);
-                                    echo "<tr><td>" . $row['sid'] . "</td><td>" . $row['sname'] . "</td><td>" . $row['mobile'] . "</td><td>" . $row['email'] . "</td><td>" . $row2 . "</td><td>";
-                                       $stat =  isEnrolled($tid, $row['sid']);
-                                       if($stat == "No"){
-                                    echo "<form method='post' action='process_en.php?tid={$tid}&sid={$row['sid']}'>
+                        if (isset($_GET['id'])) {
+                            $tid = $_GET['id'];
+                        } else {
+                            exit;
+                            $tid = "";
+                        }
+                        $res = getStaff();
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            $row2 = getHisDepartment($row['depid']);
+                            echo "<tr><td>" . $row['sid'] . "</td><td>" . $row['sname'] . "</td><td>" . $row['mobile'] . "</td><td>" . $row['email'] . "</td><td>" . $row2 . "</td><td>";
+                            $stat =  isEnrolled($tid, $row['sid']);
+                            if (!$stat) {
+                                echo "<form method='post' action='process_en.php?tid={$tid}&sid={$row['sid']}'>
                                          <input class='form-check-input' type='checkbox' value='yes' name='enroll' id=''>
                                          <button class='btn btn-primary btn-sm' name='submit'>Enroll</button> 
                                          </form></td></tr>";
-                                       } else {
-                                           echo "<br>Registered";
-                                           /** 
-                                    echo "<form method='post' action='process_en.php?tid={$tid}&sid={$row['sid']}'>
-                                        <input class='form-check-input' type='checkbox' value='yes' name='enroll' id=''>
-                                        <button class='btn btn-primary btn-sm' name='submit'>Enroll</button> 
-                                        </form></td></tr>";*/
+                            } else {
+                                //echo "<br>Registered";
+                                //  echo "<form method='post' action='process_en.php?tid={$tid}&sid={$row['sid']}'>
+                                echo "   <input class='form-check-input' type='checkbox' checked='checked' disabled='disabled    ' name='enroll' id=''>
 
-                                       }
-                                }
-                                ?>
+                                        </form></td></tr>";
+                            }
+                        }
+                        ?>
                     </tbody>
 
                 </table>
