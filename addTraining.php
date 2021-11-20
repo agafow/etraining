@@ -107,6 +107,16 @@ echo "YES YES YESY ";
                 <button class="btn btn-primary btn-sm" name="submit">Submit</button>
                 <button class="btn btn-primary btn-sm" type="reset">Reset</button>
             </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Enter Trainer name" name="trainer" , id="trainer"
+                    value="<?php echo $set_trainer; ?>">
+                <p class=" err-msg">
+                    <?php if ($trainerEr != 1) {
+                        echo $trainerEr;
+                    } ?>
+                </p>
+            </div>
+
         </div>
     </div>
 </form>

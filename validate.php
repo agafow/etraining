@@ -3,7 +3,7 @@ include('connection.php');
 // by default, error messages are empty
 $valid = $snameEr = $mobileEr = $emailEr = $genderEr  = $dobEr = $depidEr = '';
 // by default,set input values are empty
-$set_sName = $set_mobile = $set_email = $set_dob = '';
+$set_sName = $set_mobile = $set_email = $set_dob =  '';
 extract($_POST);
 if (isset($_POST['submit'])) {
 
@@ -25,6 +25,8 @@ if (isset($_POST['submit'])) {
     } else {
         $snameEr = true;
     }
+  
+
     //  Last Name Validation
     if (empty($mobile)) {
         $mobileEr = "Last Name is Required";
@@ -69,6 +71,7 @@ if (isset($_POST['submit'])) {
         $mobile =  legal_input($mobile);
         $email =     legal_input($email);
         $dob =  legal_input($dob);
+       
 
         $query = "INSERT INTO staff(sid, sname, mobile, email, gender, dob, depid, rdate)
     VALUES(NULL, '$sname', $mobile,'$email','$gender','$dob',$depid, NOW()) ";
@@ -94,6 +97,7 @@ if (isset($_POST['submit'])) {
         $set_sName = $sname;
         $set_mobile = $mobile;
         $set_email = $email;
+     
     }
 }
 // convert illegal input value to ligal value formate

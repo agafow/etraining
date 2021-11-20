@@ -53,7 +53,8 @@ function isEnrolled($tid, $sid)
     $query .= " FROM enrollment ";
     $query .= " WHERE tid = {$tid} AND sid = {$sid}  ";
     $result = mysqli_query($con, $query);
-    return $result;
+    $stst = mysqli_num_rows($result);
+    return $stst;
     //echo $query;
     //return $result;
     /** 
@@ -87,6 +88,17 @@ function getTraining()
         echo "There is erros";
     }
 }
+function getTrainingTitle($tid){
+    global $con;
+    $query = "SELECT * FROM training WHERE tid = {$tid} ";
+    $result = mysqli_query($con, $query);
+    if ($result) {
+        return $result;
+    } else {
+        echo "There is erros";
+    }
+}
+
 function getStaff()
 {
     global $con;

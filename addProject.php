@@ -1,13 +1,14 @@
 <?php
-session_start();
-echo $_SESSION['status'] = '';
+//session_start();
+//echo $_SESSION['status'] = '';
 include("header.php");
 include("functions.php");
-print_r($_SESSION);
+//print_r($_SESSION);
+/** 
 if(isset($_SESSION['status'])){
     echo $_SESSION['status'];
 echo "YES YES YESY ";
-    }
+    }*/
 ?>
 <h1 class="text-center"> Add Porject </h1>
 <form method="post" action="process_pro.php">

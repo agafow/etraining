@@ -35,7 +35,7 @@
                         <a href="training.php" class="nav-link">Training </a>
                     </li>
                     <li class="nav-item">
-                        <a href="addStaff.php" class="nav-link">Add a new Training </a>
+                        <a href="addTraining.php" class="nav-link">Add a new Training </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">View training schedule </a>

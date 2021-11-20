@@ -1,15 +1,14 @@
 <?php
 //print_r($_SESSION);
-//include("connection.php");
+include("connection.php");
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 
 if (isset($_POST['submit'])) {
-session_start();
 
-$_SESSION['status'] = "";
+//$_SESSION['status'] = "";
 // convert illegal input value to ligal value formate
 function legal_input($value)
 {

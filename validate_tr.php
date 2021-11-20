@@ -1,9 +1,9 @@
 <?php
 include('connection.php');
 // by default, error messages are empty
-$valid = $tnameEr = $nstudentsEr = $start_dateEr = $end_dateEr  = $notesEr = $project_idEr = '';
+$valid = $tnameEr = $trainerEr =  $nstudentsEr = $start_dateEr = $end_dateEr  = $notesEr = $project_idEr = '';
 // by default,set input values are empty
-$set_tName = $set_nstudents = $set_notes = $set_start_date = $set_end_date = $set_projectid = '';
+$set_tName = $set_nstudents = $set_notes = $set_start_date = $set_end_date = $set_projectid =  $set_trainer = '';
 
 extract($_POST);
 if (isset($_POST['submit'])) {
@@ -26,6 +26,13 @@ if (isset($_POST['submit'])) {
     } else {
         $tnameEr = true;
     }
+    if (empty($trainer)) {
+        $trainerEr = "Full Name is Required";
+    } else if (!preg_match($validName, $trainer)) {
+        $trainerEr = "Digits are not allowed";
+    } else {
+        $trainerEr = true;
+    }
     //  Last Name Validation
     if (empty($nstudents)) {
         $nstudentsEr = "Number of students is Required";
@@ -35,6 +42,11 @@ if (isset($_POST['submit'])) {
         $nstudentsEr  = true;
     }
     
+    if (empty($trainer)) {
+        $trainerEr= "Trainer is Required";
+    } else {
+        $trainerEr = true;
+    }
     if (empty($start_date)) {
         $start_dateEr= "Start date is Required";
     } else {
@@ -58,7 +70,7 @@ if (isset($_POST['submit'])) {
         $project_idEr  = true;
     }
     // check all fields are valid or not
-    if ($tnameEr == 1 && $nstudentsEr == 1 && $start_dateEr == 1 && $end_dateEr == 1 &&  $notesEr == 1 && $project_idEr == 1) {
+    if ($tnameEr == 1 && $nstudentsEr == 1 && $start_dateEr == 1 && $end_dateEr == 1 &&  $notesEr == 1 && $project_idEr == 1  && $trainerEr == 1) {
         $valid = "All fields are validated successfully";
 
         //legal input values
@@ -68,9 +80,10 @@ if (isset($_POST['submit'])) {
         $end_date =  legal_input($end_date);
         $notes  =  legal_input($notes);
         $project_id =  legal_input($project_id);
+        $trainer = legal_input($trainer);
 
-        $query = "INSERT INTO training(tid, tname,  project_id, start_date, end_date,  nstudents, notes, rdate, state )
-    VALUES(NULL, '$tname', $project_id, '$start_date',  '$end_date',  $nstudents, '$notes',   NOW(), 1 )";
+        $query = "INSERT INTO training(tid, trainer, tname,  project_id, start_date, end_date,  nstudents, notes, rdate, state )
+    VALUES(NULL, '$trainer', '$tname', $project_id, '$start_date',  '$end_date',  $nstudents, '$notes',   NOW(), 1 )";
         $result = mysqli_query($con, $query);
         //echo $query;
         if ($result) {
@@ -91,6 +104,7 @@ if (isset($_POST['submit'])) {
         $set_sName = $tname;
         $set_nstudents = $nstudents;
         $set_start_date = $start_date;
+        $set_trainer = $trainer;
     }
 }
 // convert illegal input value to ligal value formate
