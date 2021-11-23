@@ -4,6 +4,21 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 include('connection.php');
 
+function getTrainers(){
+    global $con;
+    $dat = array();
+    $query = "SELECT trainer, count(*) FROM training group by trainer ";
+    $result = mysqli_query($con, $query);
+    if ($result) {
+        return $result;
+      //while($row = mysqli_fetch_assoc($result)){
+       //  $dat[] = $row;
+      // }
+      // return $dat;
+    } else {
+        echo "There is erros";
+    }
+}
 
 function getDepartment()
 {
