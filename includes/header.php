@@ -40,10 +40,25 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">View training schedule </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Manage Training</a>
-                    </li>
+
+                    <?php 
+                            if(isset($_SESSION['username'])) {
+                                echo "<li class='nav-item'><a href='#' class='nav-link in'>";
+                                 echo "Welcome Mr : ".htmlentities($_SESSION["username"]); 
+                                 echo "</a></li>"; 
+                                 echo "<li class='nav-item'><a href='logout.php' class='nav-link'>";
+                                 echo "Logout";
+                                 echo "</a></li>"; 
+                            }else {
+                                echo "<li class='nav-item'><a href='login.php' class='nav-link'>";
+                                 echo "Login";
+                                 echo "</a></li>"; 
+                            }
+                    ?>
+
                 </ul>
+
+
             </div>
         </div>
     </nav>

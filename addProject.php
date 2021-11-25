@@ -1,15 +1,9 @@
-<?php
-//session_start();
-//echo $_SESSION['status'] = '';
-include("header.php");
-include("functions.php");
-//print_r($_SESSION);
-/** 
-if(isset($_SESSION['status'])){
-    echo $_SESSION['status'];
-echo "YES YES YESY ";
-    }*/
-?>
+<?php require_once("includes/session.php"); ?>
+<?php require_once("includes/functions.php"); ?>
+<?php require_once("includes/validation_functions.php"); ?>
+<?php require_once("includes/header.php"); ?>
+<?php confirm_logged_in(); ?>
+
 <h1 class="text-center"> Add Porject </h1>
 <form method="post" action="process_pro.php">
     <!-- <form action="fetch.php" method="post"> -->
@@ -44,4 +38,4 @@ echo "YES YES YESY ";
     <div class="col-md-3"></div>
 </form>
 </div>
-<?php include('footer.php'); ?>
+<?php include('includes/footer.php'); ?>

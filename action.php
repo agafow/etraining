@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('includes/connection.php');
 $output = '';
 
 if($_POST["action"] == "Add"){

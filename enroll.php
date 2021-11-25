@@ -1,11 +1,10 @@
-<?php
-include('header.php');
-include('functions.php');
+<?php require_once("includes/session.php"); ?>
+<?php require_once("includes/functions.php"); ?>
+<?php require_once("includes/validation_functions.php"); ?>
+<?php require_once("includes/header.php"); ?>
+<?php confirm_logged_in(); ?>
 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-?>
+
 <div class="container-fluid mt-5">
     <div class="row">
         <div class="col-md-1"></div>
@@ -76,4 +75,4 @@ error_reporting(E_ALL);
     </div>
 </div>
 
-<?php include('footer.php'); ?>
+<?php include('includes/footer.php'); ?>

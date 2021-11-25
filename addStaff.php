@@ -1,8 +1,11 @@
-<?php
-include("header.php");
-include("validate.php");
-include("functions.php");
-?>
+<?php require_once("includes/session.php"); ?>
+<?php require_once("includes/functions.php"); ?>
+<?php require_once("includes/validation_functions.php"); ?>
+<?php require_once("includes/header.php"); ?>
+<?php include("validate.php"); ?>
+<?php confirm_logged_in(); ?>
+
+
 <h1 class="text-center"> Data table CRUD</h1>
 <!-- Table -->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -10,7 +13,8 @@ include("functions.php");
     <div class="container p-4">
         <div class="form-row">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Enter name" name="sname" , id="sname" value="<?php echo $set_sName; ?>">
+                <input type="text" class="form-control" placeholder="Enter name" name="sname" , id="sname"
+                    value="<?php echo $set_sName; ?>">
                 <p class=" err-msg">
                     <?php if ($snameEr != 1) {
                         echo $snameEr;
@@ -18,7 +22,8 @@ include("functions.php");
                 </p>
             </div>
             <div class=" col">
-                <input type="text" class="form-control" name="mobile" placeholder="Mobile number" id="mobile" value="<?php echo $set_mobile; ?>">
+                <input type="text" class="form-control" name="mobile" placeholder="Mobile number" id="mobile"
+                    value="<?php echo $set_mobile; ?>">
                 <p class="err-msg">
                     <?php if ($mobileEr != 1) {
                         echo $mobileEr;
@@ -29,7 +34,8 @@ include("functions.php");
         <br>
         <div class="form-row">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Email" name="email" id="email" value="<?php echo $set_email; ?>">
+                <input type="text" class="form-control" placeholder="Email" name="email" id="email"
+                    value="<?php echo $set_email; ?>">
                 <p class="err-msg">
                     <?php if ($emailEr != 1) {
                         echo $emailEr;
@@ -39,9 +45,11 @@ include("functions.php");
             <div class="col">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
+                        <span class="input-group-text bg-info text-white" id="basic-addon1"><i
+                                class="fas fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="dob" name="dob" placeholder="Start Date" value="<?php echo $set_dob; ?>">
+                    <input type="text" class="form-control" id="dob" name="dob" placeholder="Start Date"
+                        value="<?php echo $set_dob; ?>">
                     <p class="err-msg">
                         <?php if ($dobEr != 1) {
                             echo $dobEr;
@@ -99,4 +107,4 @@ include("functions.php");
     </div>
 </form>
 
-<?php include('footer.php'); ?>
+<?php include('includes/footer.php'); ?>

@@ -1,14 +1,10 @@
-<?php
+<?php require_once("includes/session.php"); ?>
+<?php require_once("includes/functions.php"); ?>
+<?php require_once("includes/validation_functions.php"); ?>
+<?php require_once("includes/header.php"); ?>
+<?php include("validate_tr.php"); ?>
+<?php confirm_logged_in(); ?>
 
-include("header.php");
-include("validate_tr.php");
-include("functions.php");
-//print_r($_SESSION);
-if(isset($_SESSION['status']) && $_SESSION['status'] != ''){
-    echo $_SESSION['status'];
-echo "YES YES YESY ";
-    }
-?>
 <h1 class="text-center"> Add training </h1>
 <!-- Table -->
 <!--<form method="post" action="validate_tr.php">  -->
@@ -121,4 +117,4 @@ echo "YES YES YESY ";
     </div>
 </form>
 
-<?php include('footer.php'); ?>
+<?php include('includes/footer.php'); ?>
