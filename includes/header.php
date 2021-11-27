@@ -6,15 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- Datatables -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.css" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Training Management </title>
@@ -40,22 +38,22 @@
                         <a href="addStaff.php" class="nav-link">Add Staff </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">View training schedule </a>
+                        <a href="#" class="nav-link"> </a>
                     </li>
 
-                    <?php 
-                            if(isset($_SESSION['username'])) {
-                                echo "<li class='nav-item'><a href='#' class='nav-link in'>";
-                                 echo "Welcome Mr : ".htmlentities($_SESSION["username"]); 
-                                 echo "</a></li>"; 
-                                 echo "<li class='nav-item'><a href='logout.php' class='nav-link'>";
-                                 echo "Logout";
-                                 echo "</a></li>"; 
-                            }else {
-                                echo "<li class='nav-item'><a href='login.php' class='nav-link'>";
-                                 echo "Login";
-                                 echo "</a></li>"; 
-                            }
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        echo "<li class='nav-item'><a href='#' class='nav-link in'>";
+                        echo "Welcome Mr : " . htmlentities($_SESSION["username"]);
+                        echo "</a></li>";
+                        echo "<li class='nav-item'><a href='logout.php' class='nav-link'>";
+                        echo "Logout";
+                        echo "</a></li>";
+                    } else {
+                        echo "<li class='nav-item'><a href='login.php' class='nav-link'>";
+                        echo "Login";
+                        echo "</a></li>";
+                    }
                     ?>
 
                 </ul>
