@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -23,7 +22,7 @@
 
 <body>
     <!-- Navbar header-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top  mb-5">
         <div class="container">
             <a href="index.php" class="navbar-brand">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -36,6 +35,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="addTraining.php" class="nav-link">Add a new Training </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="addStaff.php" class="nav-link">Add Staff </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">View training schedule </a>

@@ -19,7 +19,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Mobile</th>
+
                                     <th>Email</th>
 
                                     <th>Department</th>
@@ -30,7 +30,7 @@
                                 $res = getStaff();
                                 while ($row = mysqli_fetch_assoc($res)) {
                                     $row2 = getHisDepartment($row['depid']);
-                                    echo "<tr><td>" . $row['sid'] . "</td><td>" . $row['sname'] . "</td><td>" . $row['mobile'] . "</td><td>" . $row['email'] . "</td><td>" .$row2 ."</td></tr>";
+                                    echo "<tr><td><a href='info_emp.php?id={$row['sid']}'>".$row['sid']."</a></td><td>" .$row['sname'] . "</td><td>" . $row['email'] . "</td><td>" .$row2 ."</td></tr>";
                                 }
                                 ?>
                             </tbody>

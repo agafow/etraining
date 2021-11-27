@@ -5,12 +5,13 @@
 <?php include("validate_tr.php"); ?>
 <?php confirm_logged_in(); ?>
 
-<h1 class="text-center"> Add training </h1>
+
 <!-- Table -->
 <!--<form method="post" action="validate_tr.php">  -->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <!-- <form action="fetch.php" method="post"> -->
     <div class="container p-4">
+        <h1 class="text-center"> Add training </h1>
         <div class="form-row">
             <div class="col">
                 <input type="text" class="form-control" placeholder="Enter Course name" name="tname" , id="tname"

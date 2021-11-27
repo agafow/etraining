@@ -5,13 +5,11 @@
 <?php confirm_logged_in(); ?>
 
 
+<span class="border border-secondary">
+    <div class="container mt-5 p-3">
 
-<div class="col-md-9">
-    <div class="panel panel-default">
-        <div class="panel-heading main-color-bg">
-            <h3 class="panel-title">Admin Menu</h3>
-        </div>
-        <div class="panel-body">
+        <div class="col-md-9">
+            <h2>Admin menu</h2>
 
             <div class="col-md-5">
                 <div class="list-group">
@@ -22,9 +20,10 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
-</div>
-</div>
+    </div>
+    </div>
+</span>
 </section>
 <?php include("includes/footer.php"); ?>

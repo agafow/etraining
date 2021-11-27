@@ -5,10 +5,10 @@
 <?php confirm_logged_in(); ?>
 
 
-<div class="container-fluid mt-5 mb-3">
+<div class="container-fluid mt-5">
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-9">
+        <div class="col-md-10">
             <h1 class="text-center"> Incoming Training </h1>
             <h2> <a href="addTraining.php">Add a new training </a></h2>
             <!-- Table -->
@@ -22,8 +22,8 @@
                             <th>Training Name</th>
                             <th>Start date</th>
                             <th>End date</th>
-                            <th>Takes</th>
-
+                            <th>Students</th>
+                            <th>Department</th>
                             <th>Enroll </th>
                         </tr>
                     </thead>
@@ -31,10 +31,8 @@
                         <?php
                         $res =  getTraining();
                         while ($row = mysqli_fetch_assoc($res)) {
-                        
-                            $diff_days = (strtotime($row['end_date']) - strtotime($row['start_date']))/60/60/24;
                             $row2 = getHisDepartmentProject($row['project_id']);
-                            echo "<tr><td>"  . $row['trainer'] . "</td><td>"  . $row['tname'] . "</td><td>" . $row['start_date'] . "</td><td>" . $row['end_date'] . "</td><td>" . $diff_days . " Days </td><td><a href='enroll.php?id={$row['tid']}'>Enroll</a></td></tr>";
+                            echo "<tr><td>"  . $row['trainer'] . "</td><td>"  . $row['tname'] . "</td><td>" . $row['start_date'] . "</td><td>" . $row['end_date'] . "</td><td>" . $row['nstudents'] . "</td><td>" . $row2 . "</td><td><a href='enroll.php?id={$row['tid']}'>Enroll</a></td></tr>";
                         }
                         ?>
                     </tbody>
@@ -45,5 +43,5 @@
     </div>
 </div>
 <div class="col-md-1"></div>
-<br><br>
+
 <?php include('includes/footer.php'); ?>

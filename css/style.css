@@ -26,6 +26,12 @@
 }
 .in {
   text-decoration: underline;
-  color:rgb(192, 230, 26)
+  color:rgb(192, 230, 26);
+
+}
+
+td.rep {
+  text-align: right;
+  font-weight: bold;
 
 }

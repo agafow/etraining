@@ -194,6 +194,20 @@ function logged_in() {
 /***
  * Normal functions start here
  */
+
+ function  getInfoEmployee($id){
+  global $con;
+  $query   = " select s.sname, s.mobile, s.email, s.rdate, d.dname, t.tname,t.start_date, t.end_date, t.notes "; 
+  $query  .= "from staff as s, departments as d, enrollment as e, training as t ";
+  $query  .= " where s.depid = d.did AND s.sid = e.sid AND e.tid = t.tid AND s.sid = $id ";
+  $result = mysqli_query($con, $query);
+  if ($result) {
+      //$res = mysqli_fetch_assoc($result);
+      return $result ;
+  } else {
+      echo "There is erros";
+  }
+ }
 function getTrainers(){
     global $con;
     $dat = array();
