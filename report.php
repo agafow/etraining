@@ -1,5 +1,7 @@
 <?php
 include('includes/functions.php');
+include('includes/header.php');
+
 $trainer = getTrainers();
 echo "<br>";
 ?>
@@ -39,6 +41,14 @@ echo "<br>";
 
 <body>
     <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+    <br>
+    <br>
+    <i class="far fa-address-card"></i>
+
+    <i class="fas fa-graduation-cap"></i>
+    <?php include('includes/footer.php'); ?>
+
 </body>
 
 </html>

@@ -26,12 +26,31 @@
 }
 .in {
   text-decoration: underline;
-  color:rgb(192, 230, 26);
-
+  color: rgb(192, 230, 26);
 }
 
 td.rep {
   text-align: right;
   font-weight: bold;
+}
+.fas {
+  color: blue;
+}
 
+.fa-graduation-cap {
+  color: rgb(240, 98, 15);
+}
+.fa-chalkboard-teacher {
+  color: rgb(240, 98, 15);
+}
+.fa-award {
+  color: rgb(240, 98, 15);
+}
+
+.fa-school {
+  color: rgb(240, 98, 15);
+}
+
+.btit {
+  color: #dd4905;
 }
