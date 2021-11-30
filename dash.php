@@ -5,14 +5,14 @@
 <?php confirm_logged_in(); ?>
 
 <?php
-     $trs = getTrainers();
-    $numtrs = mysqli_num_rows($trs);
+$trs = getTrainers();
+$numtrs = mysqli_num_rows($trs);
 
-    $tr = getTraining();
-    $numtr = mysqli_num_rows($tr);
+$tr = getTraining();
+$numtr = mysqli_num_rows($tr);
 
-    $st = getStaff();
-    $numts = mysqli_num_rows($st);
+$st = getStaff();
+$numts = mysqli_num_rows($st);
 
 
 
@@ -24,8 +24,7 @@
 
             <div class="card m-2" style="width:11rem;">
                 <div class="card-body">
-                    <h6 class="card-subtitle mb-3 text-muted"> <i class="fas fa-2x fa-graduation-cap"></i><span
-                            class="btit"> <?php echo $numtr; ?> Training
+                    <h6 class="card-subtitle mb-3 text-muted"> <i class="fas fa-2x fa-graduation-cap"></i><span class="btit"> <?php echo $numtr; ?> Training
                         </span> </h6>
 
 
@@ -65,7 +64,7 @@
                     <h6 class="card-subtitle mb-2 text-muted"> <i class="fas fa-2x fa-award"></i> <span class="btit">
                             <?php echo $numts; ?> Certificates </span> </h6>
 
-                    <a href="#" class="card-link">List of certificates</a>
+                    <a href="infoTraining.php" class="card-link">List of certificates</a>
 
                 </div>
             </div>
