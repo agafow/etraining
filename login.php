@@ -1,7 +1,7 @@
 <?php require_once("includes/session.php"); ?>
 <?php require_once("includes/header.php"); ?>
 <?php require_once("includes/functions.php"); ?>
-<?php require_once("includes/validation_functions.php"); ?>
+<?php require_once("includes/validation_functions.php");?> 
 
 
 <div class="container mt-5">

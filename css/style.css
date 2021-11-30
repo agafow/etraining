@@ -24,6 +24,7 @@
   padding: 10px;
   background: #f3f3f3;
 }
+
 .in {
   text-decoration: underline;
   color: rgb(192, 230, 26);
@@ -33,6 +34,7 @@ td.rep {
   text-align: right;
   font-weight: bold;
 }
+
 .fas {
   color: blue;
 }
@@ -40,9 +42,11 @@ td.rep {
 .fa-graduation-cap {
   color: rgb(240, 98, 15);
 }
+
 .fa-chalkboard-teacher {
   color: rgb(240, 98, 15);
 }
+
 .fa-award {
   color: rgb(240, 98, 15);
 }
@@ -53,4 +57,11 @@ td.rep {
 
 .btit {
   color: #dd4905;
+}
+
+.char {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }

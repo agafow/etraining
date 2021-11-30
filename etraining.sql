@@ -97,7 +97,7 @@ CREATE TABLE `training` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `nstudents` int(11) NOT NULL,
-  `notes` varchar(255) NOT NULL,
+  `location` varchar(255) NOT NULL,
   `rdate` date NOT NULL,
   `state` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

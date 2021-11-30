@@ -14,7 +14,8 @@
             <!-- Table -->
 
             <div class="table-responsive">
-                <table class="table table-borderless display nowrap" id="example" style="width:100%">
+                <table class="table table-borderless display nowrap table-sm  table-hover" id="example"
+                    style="width:100%">
                     <thead>
                         <tr>
 

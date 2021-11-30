@@ -11,30 +11,30 @@ echo "<br>";
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-        google.charts.setOnLoadCallback(drawChart);
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
+    google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Trainers', 'Courses'],
-                <?php
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Trainers', 'Courses'],
+            <?php
                 while ($data = mysqli_fetch_assoc($trainer)) {
                     echo "['" . $data['trainer'] . "'," . $data['count(*)'] . "],";
                 }
                 ?>
 
-            ]);
+        ]);
 
-            var options = {
-                title: 'My Daily Activities',
-                pieHole: 0.4,
-            };
+        var options = {
+            title: 'My Daily Activities',
+            pieHole: 0.4,
+        };
 
-            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-            chart.draw(data, options);
-        }
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+    }
     </script>
 
 </head>
@@ -44,9 +44,7 @@ echo "<br>";
 
     <br>
     <br>
-    <i class="far fa-address-card"></i>
 
-    <i class="fas fa-graduation-cap"></i>
     <?php include('includes/footer.php'); ?>
 
 </body>

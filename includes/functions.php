@@ -197,7 +197,7 @@ function logged_in() {
 
  function  getInfoEmployee($id){
   global $con;
-  $query   = " select s.sname, s.mobile, s.email, s.rdate, d.dname, t.tname,t.start_date, t.end_date, t.notes "; 
+  $query   = " select s.sname, s.mobile, s.email, s.rdate, d.dname, t.tname,t.start_date, t.end_date, t.location "; 
   $query  .= "from staff as s, departments as d, enrollment as e, training as t ";
   $query  .= " where s.depid = d.did AND s.sid = e.sid AND e.tid = t.tid AND s.sid = $id ";
   $result = mysqli_query($con, $query);
@@ -219,6 +219,18 @@ function getTrainers(){
         echo "There is erros";
     }
 }
+function getTrainersBycourses(){
+  global $con;
+  $dat = array();
+  $query = "SELECT trainer, count(*) FROM training group by trainer ";
+  $result = mysqli_query($con, $query);
+  if ($result) {
+      return $result;
+  } else {
+      echo "There is erros";
+  }
+}
+
 function getTrainersByName(){
     global $con;
     $dat = array();
@@ -305,7 +317,7 @@ function getProject()
 function getTraining()
 {
     global $con;
-    $query = "SELECT * FROM training ";
+    $query = "SELECT * FROM training order by YEAR(start_date)";
     $result = mysqli_query($con, $query);
     if ($result) {
         return $result;
@@ -313,6 +325,29 @@ function getTraining()
         echo "There is erros";
     }
 }
+
+function getTrainingByYear()
+{
+    global $con;
+    $query = "SELECT count(*), YEAR(start_date)  FROM training group by YEAR(start_date)";
+    $result = mysqli_query($con, $query);
+    if ($result) {
+        return $result;
+    } else {
+        echo "There is erros";
+    }
+}
+function getTrainersThisYear($year){
+  global $con;
+  $query = "select * from training where YEAR(start_date) = '$year' ";
+  $result = mysqli_query($con, $query);
+  if ($result) {
+      return $result;
+  } else {
+      echo "There is erros";
+  }
+}
+
 function getTrainingTitle($tid){
     global $con;
     $query = "SELECT * FROM training WHERE tid = {$tid} ";

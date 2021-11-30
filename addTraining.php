@@ -68,11 +68,11 @@
         <div class="form-row">
 
             <div class=" col">
-                <input type="text" class="form-control" name="notes" placeholder="Write Notes here " id="notes"
-                    value="<?php echo $set_notes; ?>">
+                <input type="text" class="form-control" name="location" placeholder="Write location here " id="location"
+                    value="<?php echo $set_location; ?>">
                 <p class="err-msg">
-                    <?php if ($notesEr != 1) {
-                        echo $notesEr;
+                    <?php if ($locationEr != 1) {
+                        echo $locationEr;
                     } ?>
                 </p>
             </div>
@@ -101,8 +101,21 @@
 
         <div class="form-row">
             <div class="col">
-                <button class="btn btn-primary btn-sm" name="submit">Submit</button>
-                <button class="btn btn-primary btn-sm" type="reset">Reset</button>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Type </label>
+                    </div>
+                    <select class="custom-select" name="type" id="type_id">
+                        <option value=''>.....</option>
+                        <option value=1>Offine</option>
+                        <option value=2>Online</option>
+                    </select>
+                    <p class="err-msg">
+                        <?php if ($typeEr != 1) {
+                            echo $typeEr;
+                        } ?>
+                    </p>
+                </div>
             </div>
             <div class="col">
                 <input type="text" class="form-control" placeholder="Enter Trainer name" name="trainer" , id="trainer"
@@ -113,6 +126,14 @@
                     } ?>
                 </p>
             </div>
+
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <button class="btn btn-primary btn-sm" name="submit">Submit</button>
+                <button class="btn btn-primary btn-sm" type="reset">Reset</button>
+            </div>
+
 
         </div>
     </div>

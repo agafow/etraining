@@ -5,9 +5,9 @@
 <?php confirm_logged_in(); ?>
 <?php 
 // by default, error messages are empty
-$valid = $tnameEr = $trainerEr = $nstudentsEr = $start_dateEr = $end_dateEr = $notesEr = $project_idEr = '';
+$valid = $tnameEr = $trainerEr = $nstudentsEr = $start_dateEr = $end_dateEr = $locationEr = $typeEr = $project_idEr = '';
 // by default,set input values are empty
-$set_tName = $set_nstudents = $set_notes = $set_start_date = $set_end_date = $set_projectid = $set_trainer = '';
+$set_tName = $set_nstudents = $set_location = $set_type =  $set_start_date = $set_end_date = $set_projectid = $set_trainer = '';
 
 extract($_POST);
 if (isset($_POST['submit'])) {
@@ -51,6 +51,11 @@ $trainerEr= "Trainer is Required";
 } else {
 $trainerEr = true;
 }
+if (empty($type)) {
+    $typeEr= "Type of Training is Required";
+    } else {
+    $typeEr = true;
+    }
 if (empty($start_date)) {
 $start_dateEr= "Start date is Required";
 } else {
@@ -62,10 +67,10 @@ $end_dateEr= "End date is Required";
 $end_dateEr = true;
 }
 
-if (empty($notes)) {
-$notesEr = "Notes is Required";
+if (empty($location)) {
+$locationEr = "location is Required";
 } else {
-$notesEr = true;
+$locationEr = true;
 }
 
 if (empty($project_id)) {
@@ -74,7 +79,7 @@ $project_idEr = "Project id is Required";
 $project_idEr = true;
 }
 // check all fields are valid or not
-if ($tnameEr == 1 && $nstudentsEr == 1 && $start_dateEr == 1 && $end_dateEr == 1 && $notesEr == 1 && $project_idEr == 1
+if ($tnameEr == 1 && $nstudentsEr == 1 && $start_dateEr == 1 && $end_dateEr == 1 && $locationEr == 1 && $project_idEr == 1
 && $trainerEr == 1) {
 $valid = "All fields are validated successfully";
 
@@ -83,12 +88,12 @@ $tname = legal_input($tname);
 $nstudents = legal_input($nstudents);
 $start_date = legal_input($start_date);
 $end_date = legal_input($end_date);
-$notes = legal_input($notes);
+$location = legal_input($location);
 $project_id = legal_input($project_id);
 $trainer = legal_input($trainer);
 
-$query = "INSERT INTO training(tid, trainer, tname, project_id, start_date, end_date, nstudents, notes, rdate, state )
-VALUES(NULL, '$trainer', '$tname', $project_id, '$start_date', '$end_date', $nstudents, '$notes', NOW(), 1 )";
+$query = "INSERT INTO training(tid, trainer, tname, project_id, start_date, end_date, nstudents, location, type rdate, state )
+VALUES(NULL, '$trainer', '$tname', $project_id, '$start_date', '$end_date', $nstudents, '$location', '$type', NOW(), 1 )";
 $result = mysqli_query($con, $query);
 //echo $query;
 if ($result) {

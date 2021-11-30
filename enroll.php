@@ -31,7 +31,8 @@
             </h2>
             <!-- Table -->
             <div class="table-responsive">
-                <table class="table table-borderless display nowrap" id="example" style="width:100%">
+                <table class="table table-borderless display nowrap table-hover table-sm" id="example"
+                    style="width:100%">
                     <thead>
 
                         <tr>
