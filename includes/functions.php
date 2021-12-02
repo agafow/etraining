@@ -210,6 +210,8 @@ function attempt_login($username, $password)
  * Normal functions start here
  */
 
+
+
 function  getInfoEmployee($id)
 {
   global $con;
@@ -229,6 +231,32 @@ function getTrainers()
   global $con;
   $dat = array();
   $query = "SELECT trainer, count(*) FROM training group by trainer ";
+  $result = mysqli_query($con, $query);
+  if ($result) {
+    return $result;
+  } else {
+    echo "There is erros";
+  }
+}
+function getGender()
+{
+  global $con;
+  $dat = array();
+  $query = " SELECT  YEAR(t.start_date) as year, COUNT(IF(s.gender='female',1,NULL)) as female, COUNT(IF(s.gender='male',1,NULL)) as male ";
+  $query .= "FROM  staff as s, training as t, enrollment as e WHERE s.sid = e.sid AND e.tid = t.tid group by year ";
+  $result = mysqli_query($con, $query);
+  if ($result) {
+    return $result;
+  } else {
+    echo "There is erros";
+  }
+}
+function getCourseType()
+{
+  global $con;
+  $dat = array();
+  $query = " SELECT YEAR(start_date) as year, COUNT(IF(type ='offline',1,NULL)) as offline , COUNT(if(type ='online',1,NULL)) as online  ";
+  $query .= " FROM training group by YEAR(start_date) ";
   $result = mysqli_query($con, $query);
   if ($result) {
     return $result;
