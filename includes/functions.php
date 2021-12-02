@@ -230,7 +230,7 @@ function getTrainers()
 {
   global $con;
   $dat = array();
-  $query = "SELECT trainer, count(*) FROM training group by trainer ";
+  $query = "SELECT trainer, count(*) FROM training group by trainer order by count(*) desc ";
   $result = mysqli_query($con, $query);
   if ($result) {
     return $result;
