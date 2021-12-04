@@ -67,7 +67,7 @@ $(function() {
      bg-primary text-white text-center position-relative">
     <div class="container">
         <div class="row">
-            <p class="lead">Copyright &copy; 2021 Training By Duo</p>
+            <p class="lead">Copyright &copy; 2021 Training By MOF Revenue Department</p>
 
             <a href="#" class="position-absolute bottom-0 end-0 p-5">
                 <i class="bi bi-arrow-up-circle h1"></i>

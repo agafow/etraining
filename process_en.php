@@ -1,9 +1,8 @@
-<?php
 <?php require_once("includes/session.php"); ?>
 <?php require_once("includes/functions.php"); ?>
 <?php require_once("includes/validation_functions.php"); ?>
 <?php require_once("includes/header.php"); ?>
-<?php confirm_logged_in(); ?>
+<?php confirm_logged_in(); 
 if (isset($_POST['submit'])) {
 
 

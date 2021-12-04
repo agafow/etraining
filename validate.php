@@ -55,6 +55,12 @@ if (isset($_POST['submit'])) {
         $dobEr = true;
     }
 
+    if (empty($mobile)) {
+        $mobileEr = "Mobile is Required";
+    } else {
+        $mobileEr = true;
+    }
+
     if (empty($gender)) {
         $genderEr = "Gender is Required";
     } else {
@@ -70,6 +76,14 @@ if (isset($_POST['submit'])) {
     if ($snameEr == 1 && $mobileEr == 1 && $emailEr == 1) {
         $valid = "All fields are validated successfully";
 
+        // convert illegal input value to ligal value formate
+    function legal_input($value)
+    {
+        $value = trim($value);
+        $value = stripslashes($value);
+        $value = htmlspecialchars($value);
+        return $value;
+    }
         //legal input values
         $sname = legal_input($sname);
         $mobile = legal_input($mobile);
@@ -89,10 +103,6 @@ VALUES(NULL, '$sname', $mobile,'$email','$gender','$dob',$depid, NOW()) ";
             echo "There is erros";
         }
 
-        echo "<script>
-alert('message sent succesfully');
-window.history.go(-1);
-</script>";
         header("Location: {$_SERVER["HTTP_REFERER"]}");
 
         // here you can write Sql Query to insert user data into database table
@@ -103,13 +113,6 @@ window.history.go(-1);
         $set_email = $email;
     }
 
-    // convert illegal input value to ligal value formate
-    function legal_input($value)
-    {
-        $value = trim($value);
-        $value = stripslashes($value);
-        $value = htmlspecialchars($value);
-        return $value;
-    }
+    
 }
 ?>
