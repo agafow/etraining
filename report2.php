@@ -90,10 +90,10 @@ $trainType2 = getCourseType();
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Offline', 'online'],
+                ['Year', 'Face2Face', 'Virtual'],
                 <?php
                 while ($data = mysqli_fetch_assoc($trainType)) {
-                    echo "['" . $data['year'] . "'," . $data['offline'] . "," . $data['online'] . "],";
+                    echo "['" . $data['year'] . "'," . $data['Face2Face'] . "," . $data['Virtual'] . "],";
                 }
                 ?>
 
@@ -157,10 +157,10 @@ $trainType2 = getCourseType();
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Offline', 'Online'],
+                ['Year', 'Face2Face', 'Virtual'],
                 <?php
                 while ($data = mysqli_fetch_assoc($trainType2)) {
-                    echo "['" . $data['year'] . "'," . $data['offline'] . "," . $data['online'] . "],";
+                    echo "['" . $data['year'] . "'," . $data['Face2Face'] . "," . $data['Virtual'] . "],";
                 }
                 ?>
             ]);

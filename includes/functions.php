@@ -230,7 +230,7 @@ function getTrainers()
 {
   global $con;
   $dat = array();
-  $query = "SELECT trainer, count(*) FROM training group by trainer order by count(*) desc ";
+  $query = "SELECT distinct trainer, count(*) FROM training group by trainer order by count(*) desc ";
   $result = mysqli_query($con, $query);
   if ($result) {
     return $result;
@@ -255,7 +255,7 @@ function getCourseType()
 {
   global $con;
   $dat = array();
-  $query = " SELECT YEAR(start_date) as year, COUNT(IF(type ='offline',1,NULL)) as offline , COUNT(if(type ='online',1,NULL)) as online  ";
+  $query = " SELECT YEAR(start_date) as year, COUNT(IF(type ='Face2Face',1,NULL)) as Face2Face , COUNT(if(type ='Virtual',1,NULL)) as Virtual  ";
   $query .= " FROM training group by YEAR(start_date) ";
   $result = mysqli_query($con, $query);
   if ($result) {
