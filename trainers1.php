@@ -14,8 +14,7 @@
             <!-- Table -->
 
             <div class="table-responsive">
-                <table class="table table-borderless display nowrap table-sm table-hover" id="example"
-                    style="width:100%">
+                <table class="table table-borderless display nowrap table-sm table-hover" id="example" style="width:100%">
                     <thead>
                         <tr>
                             <th>Year</th>
@@ -30,9 +29,9 @@
                         <?php
                         $res = getTrainingByYear();
                         while ($row = mysqli_fetch_assoc($res)) {
-                            echo "<tr><td>". $row['YEAR(start_date)'] . "</td><td>"  . $row['count(*)'] . "</td></tr>";
+                            echo "<tr><td>" . $row['YEAR(start_date)'] . "</td><td>"  . $row['count(*)'] . "</td></tr>";
                             $rest = getTrainersThisYear($row['YEAR(start_date)']);
-                            while($row2 = mysqli_fetch_assoc($rest)){
+                            while ($row2 = mysqli_fetch_assoc($rest)) {
                                 echo "<tr><td> </td><td> </td><td>"  . $row2['trainer'] . "</td><td>"  . $row2['tname'] . "</td><td>"  . $row2['location'] . "</td><td>"  . $row2['type'] . "</td></tr>";
                             }
                         }
