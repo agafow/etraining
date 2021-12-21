@@ -6,6 +6,7 @@ $trainer2 = getTrainers();
 $trainType = getCourseType();
 $gender = getGender();
 $trainType2 = getCourseType();
+$genders = getGenderStaff();
 ?>
 <html>
 
@@ -64,16 +65,16 @@ $trainType2 = getCourseType();
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
+            ['Task', 'Gender at Ministry'],
             <?php
-                while ($data2 = mysqli_fetch_assoc($trainer2)) {
-                    echo "['" . $data2['trainer'] . "'," . $data2['count(*)'] . "],";
+                while ($data3 = mysqli_fetch_assoc($genders)) {
+                    echo "['" . $data3['gender'] . "'," . $data3['count'] . "],";
                 }
                 ?>
         ]);
 
         var options = {
-            title: 'My Daily Activities',
+            title: 'Total Staff Gender balance ',
             pieHole: 0.4,
         };
 

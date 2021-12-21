@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="training.php" class="nav-link ">Training </a>
+                        <a href="training.php" class="nav-link">Training </a>
                     </li>
                     <li class="nav-item">
                         <a href="addTraining.php" class="nav-link">Add a new Training </a>
@@ -64,10 +64,12 @@
                     <li class="nav-item">
                         <a href="dash.php" class="nav-link">Dashboard</a>
                     </li>
+                  
                 </ul>
 
 
             </div>
         </div>
     </nav>
+   
     <hr>
