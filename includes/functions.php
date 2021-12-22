@@ -255,7 +255,7 @@ function getGenderStaff()
 {
   global $con;
   $dat = array();
-  $query = " SELECT  count(*) as count , gender from staff  group by gender";
+  $query = " SELECT  count(*) as count , gender from staff  group by gender ";
   $result = mysqli_query($con, $query);
   if ($result) {
     return $result;

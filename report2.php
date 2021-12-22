@@ -1,6 +1,9 @@
+<?php require_once("includes/session.php"); ?>
+<?php require_once("includes/functions.php"); ?>
+<?php require_once("includes/validation_functions.php"); ?>
+<?php require_once("includes/header.php"); ?>
+<?php confirm_logged_in(); ?>
 <?php
-include('includes/header.php');
-include('includes/functions.php');
 $trainer = getTrainers();
 $trainer2 = getTrainers();
 $trainType = getCourseType();
